@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NW_OpenData_ATMs.Services;
+using NW_OpenData_ATMs.Services.Interfaces;
 
 namespace NW_OpenData_ATMs
 {
@@ -20,7 +22,8 @@ namespace NW_OpenData_ATMs
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddHttpClient();
+            services.AddHttpClient<IAtms, NationwideAtms>();
+            services.AddSingleton<IAtms, NationwideAtms>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -1,0 +1,20 @@
+<h1>ATMs</h1>
+
+<p>This component demonstrates fetching data from the Nationwide API.</p>
+
+<p *ngIf="!geographicCoordinates"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="geographicCoordinates">
+  <thead>
+    <tr>
+      <th>Latitude</th>
+      <th>Longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let atm of geographicCoordinates">
+      <td>{{ atm.latitude }}</td>
+      <td>{{ atm.longitude }}</td>
+    </tr>
+  </tbody>
+</table>
