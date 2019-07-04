@@ -5,6 +5,7 @@ using static NW_OpenData_ATMs.Controllers.AtmsController;
 namespace NW_OpenData_ATMs.Models
 {
     // Generated using http://json2csharp.com/
+    // Apparently I could have used Paste Special in VS - every day's a school day
     public class Meta
     {
         public DateTime LastUpdated { get; set; }
